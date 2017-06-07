@@ -1,0 +1,82 @@
+Comandos git
+-git init:
+	inicializa el directorio actual como repositorio... crea todo lo necesario para el branch (carpeta .git)
+	
+-git clone
+	clona el repositorio...
+	
+-git status
+	estado de mi repositorio con respecto al remoto
+	
+-git add
+	agrega los archivos a la zona de stachment... listos para el pull
+	
+-git commit 
+	manda a remoto y guarda los cambios
+	git commit -m 'msj'   manda el mensaje
+	
+-git log
+	obtiene los logs de los commits
+	
+-git branch
+	git branch 'nombre' crea un branch
+	
+-git checkout
+	para cambiarse de branch
+	
+-git push
+	enciar cambios al repositorio remoto
+	git push -u origin <nombre del branch>    
+		*solo cuando no existe el branch en el remoto
+	git push cuando ya existe el remoto
+		
+-git pull
+	para traerse unos cambios
+	
+
+
+Ruby
+	metodos: con el nombre de la variable.methods
+	x.object_id = lugar de la memoria en que esta
+	las cadenas comparan con el ==
+
+	tipos de datos:
+	*tipos de datos son inmutables
+	-String: m = 'hola mundo' 
+			con comillas sencillas las cadenas que no cambian
+			con comillas dobles para concatenar con variable "hola #{a}"
+	-Fixnum: Integer en java x=2
+	-Float: igual pero le pone los decimales x=2.3
+
+	Symbols
+		Se crean esas variables una sola vez... tipo static
+		se tiene que poner con :
+		Areglos array = ['val','otro val']
+			<<agrega cosas
+		Hash: en java son mapas
+			hash = {:x => 'granjero jedi', leia:'princesa'} :x => es igual que x:
+
+	Metodos
+		palabra def nombre y argumentos
+		def say(world)
+			puts word
+		end
+
+	nil
+		es nada, tipo null pero sin ser null, le puedes preguntar por metodos
+
+	modificar argumentos
+		con mutar puedes cambiar los argumentos
+
+	ruby siempre devuelve la ultima linea ejecutada del metodo
+	si quiero terminar algo le pongo un return
+
+	metodos 
+	con ?: pregunta, tipo boleanos
+	con !: es modifica el valor
+
+
+Tarea:
+	definir un metodos "gritar" recibe de argumento una cadena y la imprime en mayusculas
+	con tres signos de admiracion
+	hola->HOLA!!!
