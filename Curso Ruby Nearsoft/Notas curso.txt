@@ -80,3 +80,157 @@ Tarea:
 	definir un metodos "gritar" recibe de argumento una cadena y la imprime en mayusculas
 	con tres signos de admiracion
 	hola->HOLA!!!
+
+
+
+segunda clase
+
+	collections
+		arrays
+			ordenada ?? por orden
+			indexada: el indice empieza en 0
+			se ponen con []
+			para obtener valores [2].. si lo quiero alreves lo pongo como [-1]
+			Para agregar elementos: array << :hello
+				o tambien en una posicion: array[4] : pero este lo sobreescribe
+
+			each: es como un for
+				list.each do |name|   //el name es la variable
+					puts "el nombre es: " {#name}    //{# para interpolar variables
+				end
+
+
+		hashes
+			llave y valor
+			no importa el orden
+			//mejor usar la llave con Symbol (con los :)
+
+
+			ejemplo:
+				hash = {'key'=>'first element', 2=>:second, doge: ['such', :wow]} //tipo mapa
+				//esto: doge: ['such', :wow] es igual a esto :doge => ['such', :wow]
+				hash["key"]
+				=> "First element"
+
+
+				//ir por el valor
+				hash[:doge]
+				=> ['such', :wow]
+
+				//agregar valores
+				hash[:burn_them] = 'All' //si no existe la llave lo agrega, si ya existe lo sustituye
+
+				//iterar
+				hash.each do |key, value|
+					puts "la llave {#key}  tiene el valor {#value}"
+				end
+
+	Symbols
+		como tipo constantes... para darle nombres a objetos
+		con :
+		cadena inmutable...siempre el mismo espacio de memoria
+		user en hash
+		NO usar cuando queremos modificar
+		Las comparaciones de = es mas rapido
+
+	alcance de variables en ruby
+		Local
+			meh = //vive en el bloque nada mas
+		Instancia
+			@alive =  //es variable de clase... vive lo que viva la clase
+		De clase
+			@@like_a_sir= //es como las static de la clase
+		globales
+			$master= accesible desde cualquier lado del programa
+
+	Metodos accesores
+		como los getters y setters
+
+		//ejemplo
+		class Persona
+			def initialize(name)
+				@nombre = name
+			end
+
+			def nombre
+				@nombre
+			end
+
+			def nombre=(nuevo_nombre)
+				@nombre = nuevo_nombre
+			end
+		end
+
+	metodos en comun
+		attr_accesor //get y set
+		attr_reader //solo los get
+		attr_writter //solo los sets
+
+
+	Blocks
+		NO son objetos
+		pedasos de codigo que se pasan como argumentos a metodos
+		se delimitan las palabras do...end  o se usan llaves{}
+		yield => palabra para utilizar un bloque... se puede usar muchas veces
+		if block_given //palabra reservada apra ver si resibio un bloque
+
+		//ejemplo
+			ef imprime_pls
+				if block_given?
+					yield
+					yield
+				else
+					puts "no es un bloque"
+				end
+			end
+
+			imprime_pls{puts "the cake is a lie"}
+
+
+	Procs
+		son objetos
+		utiliza el &
+		se mandan llamar con el .call
+
+		//ejemplo
+			def imprime_pls (&this_is_proc)
+				puts block_given?
+				this_is_proc.call
+			end
+
+			imprime_pls{puts "the cake is a lie"}
+
+	Lambdas
+		son objetos
+		tipo funcion anonima
+		te permiten utilizar el return
+		verifican que pasen el numero correcto de argumentos
+
+		//ejemplo
+			procs = Proc.new{|x| puts x}
+			procs.call(2)
+			procs.call(2,4,5)
+
+
+			lam = lambda {|y,z,w| puts z}
+			lam.call(7,3,8)
+
+	
+	ifs
+		comparaciones con ==
+
+		if
+		elsif
+		end
+
+		//-------------
+		yield if block_given?
+
+		//
+		yield if !block_given?
+
+		//unles... es el negado del if
+		yield unless block_given?
+
+		//ternario
+		block_given? yield : puts "No es block"		
