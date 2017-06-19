@@ -162,7 +162,7 @@ segunda clase
 		end
 
 	metodos en comun
-		attr_accesor //get y set
+		attr_accessor //get y set
 		attr_reader //solo los get
 		attr_writter //solo los sets
 
