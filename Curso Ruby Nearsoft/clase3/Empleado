@@ -1,0 +1,16 @@
+load "clase3.rb"
+class Empleado < Persona
+	@@no_de_empleado = 0
+
+	attr_accessor :no_de_empleado
+
+	def initialize(nombre, fecha)
+		@no_de_empleado +=1
+		super(nombre, fecha)
+	end 
+end
+
+emp = Empleado.new("Otro wey", "19-09-1988")
+
+emp.saludar
+puts emp.no_de_empleado

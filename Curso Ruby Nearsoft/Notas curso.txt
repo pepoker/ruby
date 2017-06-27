@@ -234,3 +234,105 @@ segunda clase
 
 		//ternario
 		block_given? yield : puts "No es block"		
+
+
+Tercer clase
+	Objetos
+		Clases
+			constructor
+				se llama initialize
+				no existe la sobrecarga de constructore
+
+				def initialize(nombre, fecha_de_nacimiento, apodo = nil) $valores por default
+				def initialize(parameter = {}) #recibe un hash
+
+				para llamarlo: utilizamos la palabra new #hace referencia al 
+				initialize
+
+					Person.new(nombre, fecha)
+
+
+				ejemplo
+					def initialize(nombre, fecha_de_nacimiento)
+						@nombre = nombre
+						@fecha_de_nacimiento = fecha_de_nacimiento
+					end
+
+
+			ejemplo:
+				class Persona
+					#atributos
+					attr_reader :nombre :fecha_de_nacimiento
+					attr_accessor :genero
+
+					#constructor
+					def initialize(nombre, fecha_de_nacimiento)
+						@nombre = nombre
+						@fecha_de_nacimiento = Date.parce(fecha_de_nacimiento)
+					end
+
+					#acciones
+					def saludar
+						puts 'hola'
+					end
+
+					def obtener_paga
+						#obtiene la paga
+					end
+				end
+
+	metodos de ruby:
+		load:
+			carga archivos en el entorno de ruby (para que lo vea)
+			lo carga cada vez que se llame
+			ejemplo:
+				load 'Persona.load'
+
+		require o require_relative
+			carga archivos igual que el load, pero si lleva registro de lo que se cargo
+			regresa true cuando lo carga y false cuando ya lo habia cargado
+
+			*la diferencia es que el requiere necesita la ruta completa y el requiere_relative usa la ruta actual
+
+			ejemplo:
+				requiere './example/Persona'
+
+				requiere_relative 'example/persona'
+
+		require
+			indica que debe cargar una clase
+
+			ejemplo
+				require 'date'
+
+	Herencia
+		se especifica con: < Persona
+			class Empleado < Persona
+		si no se especifica el initialize se llama al de papa directo
+
+	Modulos
+		para agrupar cosas (metodos, constantes, clases)
+		puede usarse como:
+			-libreria
+			-mixins
+
+		Libreria
+			se usa la palabra module en vez de class
+			constantes en mayusculas
+
+			metodosStatic o de clase: nombre de la clase.nombre_metodo
+			o usar el self.nombre del metodo
+
+			usar las constantes
+				Trigonometria::PI
+
+				module Trigonometria
+					PI = 3.141592
+
+					def Trigonometria.sin(x) #metodo static, no necesita instanciar la clase
+					end
+				end
+	Mixing
+		con la palabra include #se incluyen los metodos de la clas
+			include Trigonometris
+		es como composicion

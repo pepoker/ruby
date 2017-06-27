@@ -8,7 +8,7 @@
 porcentajes = [0.1, 0.21, 0.23, 0.94]
 
 # metodo map aqui - una linea!!!
-uso_map = porcentajes.map{|a| "#{100*a}%" }
+uso_map = porcentajes.map{|a| "#{(100*a).to_i}%" }
 
 puts uso_map
 # Resultado esperado:
