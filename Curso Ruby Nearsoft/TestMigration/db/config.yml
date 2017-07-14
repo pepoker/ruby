@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  host: localhost
+  database: rubyschool_dev
+  username: postgres
+  password: toluca123
+
